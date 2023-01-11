@@ -4,18 +4,43 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 public class RideHistory {
-	Map<String, ArrayList<TotalRide>> userRides;
+	int id;
+	   double totalDistance;
+	   double totalRidesDuration;
 
-	public RideHistory() {
-		this.userRides = new HashMap<String, ArrayList<TotalRide>>();
-	}
+	    public int getId() {
+	        return id;
+	    }
 
-	public void addRide(String userId, TotalRide[] rides) {
-		this.userRides.put(userId, new ArrayList<TotalRide>(Arrays.asList(rides)));
-	}
+	    public void setId(int id) {
+	        this.id = id;
+	    }
 
-	public TotalRide[] getRides(String userId) {
-		return this.userRides.get(userId).toArray(new TotalRide[0]);
-	}
+	    public double getTotalDistance() {
+	        return totalDistance;
+	    }
+
+	    public void setTotalDistance(double totalDistance) {
+	        this.totalDistance = totalDistance;
+	    }
+
+	    public double getTotalRidesDuration() {
+	        return totalRidesDuration;
+	    }
+
+	    public void setTotalRidesDuration(double totalRidesDuration) {
+	        this.totalRidesDuration = totalRidesDuration;
+	    }
+
+	    public RideHistory(int id, double totalDistance, double totalRidesDuration) {
+	        this.id = id;
+	        this.totalDistance = totalDistance;
+	        this.totalRidesDuration = totalRidesDuration;
+	    }
+
+	    public double getTotalRideDuration() {
+	        return getTotalRidesDuration();
+	    }
+	    
 }
 
